@@ -1,0 +1,35 @@
+var touchSrartX
+//滑动开始
+function handleTouchstart(event) {
+  console.log(event)
+  //记录触摸开始的X轴 的位置
+  touchSrartX = event.changedTouches[0].clientX
+}
+//滑动结束
+function handleTouchend(event, ownerInstance) {
+  console.log(event)
+  var touchEndX = event.changedTouches[0].clientX
+  //把结束时X轴触摸的位置 - 触摸开始的X轴 的位置
+  var distance = touchEndX - touchSrartX
+  //-1:后退（右滑） 0:不动 1:前进（左滑）
+  var direction = 0
+  if (distance < 0 && distance < -70) {
+    direction = 1
+  }
+  if (distance > 0 && distance > -70) {
+    direction = -1
+  }
+  if (direction !== 0) {
+    ownerInstance.callMethod('handleTouchMove', {
+      direction: direction
+    })
+
+  }
+  //做判断 判断是左滑动还是右滑动
+  //做数据绑定，currentTarget改变
+}
+
+module.exports = {
+  handleTouchstart: handleTouchstart,
+  handleTouchend: handleTouchend
+}

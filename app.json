@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/publish/publish",
+    "pages/message/message",
+    "pages/my/my",
+    "components/tabs/tabs",
+    "components/service-preview/service-preview",
+    "components/icon/icon",
+    "pages/service-detail/service-detail",
+    "components/service-rating/service-rating",
+    "components/rating/rating"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "木木到家",
+    "navigationBarTextStyle": "black",
+    "backgroundColorBottom": "#efefef"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "borderStyle": "white",
+    "selectedColor": "#FBC02D",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "广场",
+        "iconPath": "image/tab-bar/home.png",
+        "selectedIconPath": "image/tab-bar/home-select.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "image/tab-bar/publish.png",
+        "selectedIconPath": "image/tab-bar/publish-select.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "image/tab-bar/message.png",
+        "selectedIconPath": "image/tab-bar/message-select.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "image/tab-bar/my.png",
+        "selectedIconPath": "image/tab-bar/my-select.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-tabs": "/components/tabs/tabs",
+    "i-service-preview": "/components/service-preview/service-preview",
+    "i-icon": "/components/icon/icon",
+    "i-show-status": "/components/show-status/show-status",
+    "i-avatar": "/components/avatar/avatar",
+    "i-rating": "/components/rating/rating",
+    "i-service-rating": "/components/service-rating/service-rating"
+  }
+}

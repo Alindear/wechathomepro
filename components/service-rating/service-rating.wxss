@@ -1,0 +1,14 @@
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.creae-item{
+  color: #888888;
+}
+
+.score{
+  display: flex;
+  align-items: center;
+}
