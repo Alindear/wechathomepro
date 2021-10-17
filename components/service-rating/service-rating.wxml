@@ -12,4 +12,11 @@
   <view class="score">
     评分：<i-rating count="{{5}}" selected="{{rating.score}}" size="36"></i-rating>
   </view>
+  <view class="content">{{rating.content}}</view>
+  <view wx:if="{{rating.illustration.length}}" class="illustration">
+  <!-- block 占位元素 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。 -->
+    <block wx:for="{{rating.illustration}}" wx:key="index">
+      <image src="{{item}}" class="illustration-image" bind:tap="handlePreview" data-index="{{index}}"></image>
+    </block>
+  </view>
 </view>

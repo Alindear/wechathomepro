@@ -31,7 +31,7 @@
       <view class="price">
         <text class="label">￥</text>{{service.price}}
       </view>
-      <view class="sales-volume" wx:if="{{service.type === service.type === serviceType.PROVIDE}}">已售 {{service.sales_volume}}</view>
+      <view class="sales-volume" wx:if="{{service.type === serviceType.PROVIDE}}">已售 {{service.sales_volume}}</view>
     </view>
     <view class="row">
       <view class="deacription">{{service.description}}</view>
@@ -41,13 +41,23 @@
     <view>服务状态</view>
     <view>{{statusText.convert(service.status)}}</view>
   </view>
-  <view class="service-rating">
+  <view class="service-rating" wx:if="{{service.type === serviceType.PROVIDE}}">
     <view class="service-rating-title">历史评价</view>
-    <view class="service-rating-list">
+    <view wx:if="{{ratingList.length}}" class="service-rating-list">
       <view class="service-rating-item" wx:for="{{ratingList}}" wx:key="index">
         <i-service-rating rating="{{item}}"></i-service-rating>
       </view>
     </view>
+    <view wx:else>
+      <i-show-status show content="暂时还没有任何服务" top="150"></i-show-status>
+    </view>
   </view>
-  <view class="action-bar"></view>
+  <view class="action-bar">
+    <view class="action-bar-item">
+      <button>按钮1</button>
+      <button>按钮2</button>
+      <button>按钮3</button>
+    </view>
+    <i-safe-area area="bottom"></i-safe-area>
+  </view>
 </view>

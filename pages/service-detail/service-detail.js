@@ -1,6 +1,7 @@
 import Rating from "../../model/rating"
 import Service from "../../model/service"
 import User from "../../model/user"
+import serviceType from "../../enum/service-type"
 
 const rating = new Rating()
 
@@ -15,6 +16,7 @@ Page({
     serviceId: null,
     isPublisher: false,
     ratingList:[],
+    serviceType: serviceType,
   },
 
   /**
@@ -22,6 +24,7 @@ Page({
    */
   onLoad: async function (options) {
     //获取点击服务列表，wx.navigateTo跳转路由传入的值service_id
+    console.log('options.service_id-----',options.service_id);
     this.data.serviceId = options.service_id
     //调用方法（通过id获取服务的方法）
     await this._getService()
@@ -30,8 +33,7 @@ Page({
     this._checkRole()
   },
   async _getServiceRatingList(){
-   const ratingList = await rating.getServiceRatingList(this.data.serviceId)
-   console.log('ratingList======info',ratingList);
+   const ratingList = await rating.reset().getServiceRatingList(this.data.serviceId)
    this.setData({
     ratingList
    })

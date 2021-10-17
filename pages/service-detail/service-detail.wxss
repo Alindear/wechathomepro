@@ -69,6 +69,10 @@
     padding: 30rpx 30rpx;
     background-color: #fff;
 }
+.service-rating{
+    min-height: 500rpx;
+}
+
 
 .service-status{
     display: flex;
